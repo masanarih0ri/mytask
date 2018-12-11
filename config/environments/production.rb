@@ -24,9 +24,11 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  # scssでマニフェストファイルを作っていたので、このコメントを外さないとダメっぽい
+  config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
+  # ここを外したら動いた。これを書かない場合はプリコンパイルをせずに動作確認をすることができるようになる。ただし、メモリを余分に消費したり、パフォーマンスの低下をまねく可能性もある。productionではデフォルトでfalseに設定されている
   config.assets.compile = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
