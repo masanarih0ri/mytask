@@ -71,3 +71,7 @@ gem 'rails_autolink'
 gem 'rspec-rails', '~> 3.7'
 
 gem 'ransack'
+
+gem 'kaminari'
+
+gem 'sidekiq'

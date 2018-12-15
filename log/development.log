@@ -5004,3 +5004,1166 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 57ms (Views: 52.1ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 15:31:15 +0900
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:25
+  Rendered tasks/index.html.slim within layouts/application (67.9ms)
+Completed 200 OK in 458ms (Views: 391.1ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/tasks.csv" for 127.0.0.1 at 2018-12-15 15:31:22 +0900
+Processing by TasksController#index as CSV
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/models/task.rb:24
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `shrftime' for Sat, 15 Dec 2018 15:31:22 JST +09:00:Time
+Did you mean?  strftime):
+  
+app/controllers/tasks_controller.rb:12:in `block (2 levels) in index'
+app/controllers/tasks_controller.rb:8:in `index'
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 15:31:58 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 8.4ms)
+
+
+  
+SyntaxError (/Users/m-hori/mytask/app/models/task.rb:48: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/models/task.rb:48: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/tasks_controller.rb:4:in `index'
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 15:32:24 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:25
+  Rendered tasks/index.html.slim within layouts/application (18.7ms)
+Completed 200 OK in 80ms (Views: 53.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 15:34:42 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:25
+  Rendered tasks/index.html.slim within layouts/application (15.3ms)
+Completed 200 OK in 71ms (Views: 50.0ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/tasks.csv" for 127.0.0.1 at 2018-12-15 15:34:44 +0900
+Processing by TasksController#index as CSV
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/models/task.rb:24
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data tasks-2018121544.csv (2.3ms)
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 16:11:01 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:25
+  Rendered tasks/index.html.slim within layouts/application (27.4ms)
+Completed 200 OK in 126ms (Views: 80.8ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 16:14:35 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:25
+  Rendered tasks/index.html.slim within layouts/application (37.9ms)
+Completed 200 OK in 131ms (Views: 108.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/tasks/import" for 127.0.0.1 at 2018-12-15 16:14:52 +0900
+Processing by TasksController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TB94cY5Xr/tevkDEuLAnVBh6NcxPnHcamDyqkkTXYsxzMC4aFsDzHMtUMhZJPczRdQV/Drs+Eekd5/LE6oUaBw==", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007fc876e0e7a0 @tempfile=#<Tempfile:/var/folders/j4/qf39rdfx4_58vh7xcw_fw24r0000gn/T/RackMultipart20181215-22836-1uzytj8.csv>, @original_filename="追加ファイル.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"\xE8\xBF\xBD\xE5\x8A\xA0\xE3\x83\x95\xE3\x82\xA1\xE3\x82\xA4\xE3\x83\xAB.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"インポート"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/task.rb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/task.rb:35
+  [1m[36mTask Create (1.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "餃子を作る"], ["description", "160個作る"], ["created_at", "2018-12-15 07:14:52.341421"], ["updated_at", "2018-12-15 07:14:52.341421"], ["user_id", 2]]
+  ↳ app/models/task.rb:35
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/task.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/task.rb:35
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/task.rb:35
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "餃子を冷凍する"], ["description", " 食えないので冷凍する"], ["created_at", "2018-12-15 07:14:52.350690"], ["updated_at", "2018-12-15 07:14:52.350690"], ["user_id", 2]]
+  ↳ app/models/task.rb:35
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/task.rb:35
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 24ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 16:14:52 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:25
+  Rendered tasks/index.html.slim within layouts/application (15.6ms)
+Completed 200 OK in 53ms (Views: 49.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/18" for 127.0.0.1 at 2018-12-15 16:14:59 +0900
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:70
+  Rendering tasks/show.html.slim within layouts/application
+  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Task"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tasks/show.html.slim:19
+  Rendered tasks/show.html.slim within layouts/application (36.6ms)
+Completed 200 OK in 83ms (Views: 71.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/tasks/19" for 127.0.0.1 at 2018-12-15 16:15:02 +0900
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:70
+  Rendering tasks/show.html.slim within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Task"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tasks/show.html.slim:19
+  Rendered tasks/show.html.slim within layouts/application (18.4ms)
+Completed 200 OK in 90ms (Views: 82.3ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 17:11:41 +0900
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 11], ["OFFSET", 0]]
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 11], ["OFFSET", 0]]
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 11], ["OFFSET", 0]]
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 11], ["OFFSET", 0]]
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered tasks/index.html.slim within layouts/application (202.4ms)
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 7.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `pagenate' for #<#<Class:0x00007ffe68c698a0>:0x00007ffe68c58b90>
+Did you mean?  paginate):
+    15: = link_to '新規登録', new_task_path, class: 'btn btn-primary'
+    16: 
+    17: .mb-3
+    18:   = pagenate @tasks
+    19:   = page_entries_info @tasks
+    20: 
+    21: .mb-3
+  
+app/views/tasks/index.html.slim:18:in `_app_views_tasks_index_html_slim___2190883290065238518_70365328135580'
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 17:12:54 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (36.3ms)
+Completed 200 OK in 381ms (Views: 369.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 17:13:56 +0900
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (77.3ms)
+Completed 200 OK in 377ms (Views: 324.0ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-12-15 17:14:01 +0900
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/_form.html.slim (10.2ms)
+  Rendered tasks/new.html.slim within layouts/application (15.4ms)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 17:14:10 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (23.0ms)
+Completed 200 OK in 64ms (Views: 57.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 17:14:58 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (64.4ms)
+Completed 200 OK in 387ms (Views: 313.7ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 17:15:01 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (20.1ms)
+Completed 200 OK in 54ms (Views: 47.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 17:15:45 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (65.4ms)
+Completed 200 OK in 398ms (Views: 331.1ms | ActiveRecord: 9.4ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (4.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "0"], ["created_at", "2018-12-15 08:18:46.741291"], ["updated_at", "2018-12-15 08:18:46.741291"], ["user_id", 2]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "1"], ["created_at", "2018-12-15 08:18:46.752283"], ["updated_at", "2018-12-15 08:18:46.752283"], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "2"], ["created_at", "2018-12-15 08:18:46.756342"], ["updated_at", "2018-12-15 08:18:46.756342"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "3"], ["created_at", "2018-12-15 08:18:46.758933"], ["updated_at", "2018-12-15 08:18:46.758933"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "4"], ["created_at", "2018-12-15 08:18:46.761567"], ["updated_at", "2018-12-15 08:18:46.761567"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "5"], ["created_at", "2018-12-15 08:18:46.764043"], ["updated_at", "2018-12-15 08:18:46.764043"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "6"], ["created_at", "2018-12-15 08:18:46.766256"], ["updated_at", "2018-12-15 08:18:46.766256"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "7"], ["created_at", "2018-12-15 08:18:46.768289"], ["updated_at", "2018-12-15 08:18:46.768289"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "8"], ["created_at", "2018-12-15 08:18:46.770500"], ["updated_at", "2018-12-15 08:18:46.770500"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "9"], ["created_at", "2018-12-15 08:18:46.772443"], ["updated_at", "2018-12-15 08:18:46.772443"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "10"], ["created_at", "2018-12-15 08:18:46.774314"], ["updated_at", "2018-12-15 08:18:46.774314"], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "11"], ["created_at", "2018-12-15 08:18:46.777377"], ["updated_at", "2018-12-15 08:18:46.777377"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "12"], ["created_at", "2018-12-15 08:18:46.779866"], ["updated_at", "2018-12-15 08:18:46.779866"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "13"], ["created_at", "2018-12-15 08:18:46.782533"], ["updated_at", "2018-12-15 08:18:46.782533"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "14"], ["created_at", "2018-12-15 08:18:46.784842"], ["updated_at", "2018-12-15 08:18:46.784842"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "15"], ["created_at", "2018-12-15 08:18:46.787788"], ["updated_at", "2018-12-15 08:18:46.787788"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "16"], ["created_at", "2018-12-15 08:18:46.789850"], ["updated_at", "2018-12-15 08:18:46.789850"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "17"], ["created_at", "2018-12-15 08:18:46.791850"], ["updated_at", "2018-12-15 08:18:46.791850"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "18"], ["created_at", "2018-12-15 08:18:46.793835"], ["updated_at", "2018-12-15 08:18:46.793835"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "19"], ["created_at", "2018-12-15 08:18:46.795738"], ["updated_at", "2018-12-15 08:18:46.795738"], ["user_id", 2]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "20"], ["created_at", "2018-12-15 08:18:46.803143"], ["updated_at", "2018-12-15 08:18:46.803143"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "21"], ["created_at", "2018-12-15 08:18:46.806244"], ["updated_at", "2018-12-15 08:18:46.806244"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "22"], ["created_at", "2018-12-15 08:18:46.808366"], ["updated_at", "2018-12-15 08:18:46.808366"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "23"], ["created_at", "2018-12-15 08:18:46.810342"], ["updated_at", "2018-12-15 08:18:46.810342"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "24"], ["created_at", "2018-12-15 08:18:46.812539"], ["updated_at", "2018-12-15 08:18:46.812539"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "25"], ["created_at", "2018-12-15 08:18:46.815276"], ["updated_at", "2018-12-15 08:18:46.815276"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "26"], ["created_at", "2018-12-15 08:18:46.817974"], ["updated_at", "2018-12-15 08:18:46.817974"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "27"], ["created_at", "2018-12-15 08:18:46.820533"], ["updated_at", "2018-12-15 08:18:46.820533"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "28"], ["created_at", "2018-12-15 08:18:46.823713"], ["updated_at", "2018-12-15 08:18:46.823713"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "29"], ["created_at", "2018-12-15 08:18:46.826120"], ["updated_at", "2018-12-15 08:18:46.826120"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "30"], ["created_at", "2018-12-15 08:18:46.828820"], ["updated_at", "2018-12-15 08:18:46.828820"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "31"], ["created_at", "2018-12-15 08:18:46.831123"], ["updated_at", "2018-12-15 08:18:46.831123"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "32"], ["created_at", "2018-12-15 08:18:46.833160"], ["updated_at", "2018-12-15 08:18:46.833160"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "33"], ["created_at", "2018-12-15 08:18:46.834931"], ["updated_at", "2018-12-15 08:18:46.834931"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "34"], ["created_at", "2018-12-15 08:18:46.836889"], ["updated_at", "2018-12-15 08:18:46.836889"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "35"], ["created_at", "2018-12-15 08:18:46.838668"], ["updated_at", "2018-12-15 08:18:46.838668"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "36"], ["created_at", "2018-12-15 08:18:46.840529"], ["updated_at", "2018-12-15 08:18:46.840529"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "37"], ["created_at", "2018-12-15 08:18:46.842798"], ["updated_at", "2018-12-15 08:18:46.842798"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "38"], ["created_at", "2018-12-15 08:18:46.844826"], ["updated_at", "2018-12-15 08:18:46.844826"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "39"], ["created_at", "2018-12-15 08:18:46.846611"], ["updated_at", "2018-12-15 08:18:46.846611"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "40"], ["created_at", "2018-12-15 08:18:46.848999"], ["updated_at", "2018-12-15 08:18:46.848999"], ["user_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "41"], ["created_at", "2018-12-15 08:18:46.850683"], ["updated_at", "2018-12-15 08:18:46.850683"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "42"], ["created_at", "2018-12-15 08:18:46.852375"], ["updated_at", "2018-12-15 08:18:46.852375"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "43"], ["created_at", "2018-12-15 08:18:46.854053"], ["updated_at", "2018-12-15 08:18:46.854053"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "44"], ["created_at", "2018-12-15 08:18:46.855679"], ["updated_at", "2018-12-15 08:18:46.855679"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "45"], ["created_at", "2018-12-15 08:18:46.857350"], ["updated_at", "2018-12-15 08:18:46.857350"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "46"], ["created_at", "2018-12-15 08:18:46.859098"], ["updated_at", "2018-12-15 08:18:46.859098"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "47"], ["created_at", "2018-12-15 08:18:46.860858"], ["updated_at", "2018-12-15 08:18:46.860858"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "48"], ["created_at", "2018-12-15 08:18:46.862586"], ["updated_at", "2018-12-15 08:18:46.862586"], ["user_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "49"], ["created_at", "2018-12-15 08:18:46.864261"], ["updated_at", "2018-12-15 08:18:46.864261"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "50"], ["created_at", "2018-12-15 08:18:46.865996"], ["updated_at", "2018-12-15 08:18:46.865996"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "51"], ["created_at", "2018-12-15 08:18:46.868928"], ["updated_at", "2018-12-15 08:18:46.868928"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "52"], ["created_at", "2018-12-15 08:18:46.872167"], ["updated_at", "2018-12-15 08:18:46.872167"], ["user_id", 2]]
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.6ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "53"], ["created_at", "2018-12-15 08:18:46.878267"], ["updated_at", "2018-12-15 08:18:46.878267"], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "54"], ["created_at", "2018-12-15 08:18:46.882251"], ["updated_at", "2018-12-15 08:18:46.882251"], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "55"], ["created_at", "2018-12-15 08:18:46.885581"], ["updated_at", "2018-12-15 08:18:46.885581"], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "56"], ["created_at", "2018-12-15 08:18:46.888569"], ["updated_at", "2018-12-15 08:18:46.888569"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "57"], ["created_at", "2018-12-15 08:18:46.891276"], ["updated_at", "2018-12-15 08:18:46.891276"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "58"], ["created_at", "2018-12-15 08:18:46.893704"], ["updated_at", "2018-12-15 08:18:46.893704"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "59"], ["created_at", "2018-12-15 08:18:46.895934"], ["updated_at", "2018-12-15 08:18:46.895934"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "60"], ["created_at", "2018-12-15 08:18:46.897881"], ["updated_at", "2018-12-15 08:18:46.897881"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "61"], ["created_at", "2018-12-15 08:18:46.899736"], ["updated_at", "2018-12-15 08:18:46.899736"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "62"], ["created_at", "2018-12-15 08:18:46.901508"], ["updated_at", "2018-12-15 08:18:46.901508"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "63"], ["created_at", "2018-12-15 08:18:46.903449"], ["updated_at", "2018-12-15 08:18:46.903449"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "64"], ["created_at", "2018-12-15 08:18:46.905231"], ["updated_at", "2018-12-15 08:18:46.905231"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "65"], ["created_at", "2018-12-15 08:18:46.907512"], ["updated_at", "2018-12-15 08:18:46.907512"], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "66"], ["created_at", "2018-12-15 08:18:46.910611"], ["updated_at", "2018-12-15 08:18:46.910611"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "67"], ["created_at", "2018-12-15 08:18:46.912762"], ["updated_at", "2018-12-15 08:18:46.912762"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "68"], ["created_at", "2018-12-15 08:18:46.914741"], ["updated_at", "2018-12-15 08:18:46.914741"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (2.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "69"], ["created_at", "2018-12-15 08:18:46.916646"], ["updated_at", "2018-12-15 08:18:46.916646"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "70"], ["created_at", "2018-12-15 08:18:46.920815"], ["updated_at", "2018-12-15 08:18:46.920815"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "71"], ["created_at", "2018-12-15 08:18:46.922566"], ["updated_at", "2018-12-15 08:18:46.922566"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "72"], ["created_at", "2018-12-15 08:18:46.924323"], ["updated_at", "2018-12-15 08:18:46.924323"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "73"], ["created_at", "2018-12-15 08:18:46.926117"], ["updated_at", "2018-12-15 08:18:46.926117"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "74"], ["created_at", "2018-12-15 08:18:46.927875"], ["updated_at", "2018-12-15 08:18:46.927875"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "75"], ["created_at", "2018-12-15 08:18:46.929893"], ["updated_at", "2018-12-15 08:18:46.929893"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "76"], ["created_at", "2018-12-15 08:18:46.931791"], ["updated_at", "2018-12-15 08:18:46.931791"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "77"], ["created_at", "2018-12-15 08:18:46.933589"], ["updated_at", "2018-12-15 08:18:46.933589"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "78"], ["created_at", "2018-12-15 08:18:46.936222"], ["updated_at", "2018-12-15 08:18:46.936222"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "79"], ["created_at", "2018-12-15 08:18:46.939313"], ["updated_at", "2018-12-15 08:18:46.939313"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "80"], ["created_at", "2018-12-15 08:18:46.941603"], ["updated_at", "2018-12-15 08:18:46.941603"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "81"], ["created_at", "2018-12-15 08:18:46.943712"], ["updated_at", "2018-12-15 08:18:46.943712"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "82"], ["created_at", "2018-12-15 08:18:46.946019"], ["updated_at", "2018-12-15 08:18:46.946019"], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "83"], ["created_at", "2018-12-15 08:18:46.949138"], ["updated_at", "2018-12-15 08:18:46.949138"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "84"], ["created_at", "2018-12-15 08:18:46.952270"], ["updated_at", "2018-12-15 08:18:46.952270"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "85"], ["created_at", "2018-12-15 08:18:46.954962"], ["updated_at", "2018-12-15 08:18:46.954962"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "86"], ["created_at", "2018-12-15 08:18:46.957339"], ["updated_at", "2018-12-15 08:18:46.957339"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "87"], ["created_at", "2018-12-15 08:18:46.959654"], ["updated_at", "2018-12-15 08:18:46.959654"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "88"], ["created_at", "2018-12-15 08:18:46.961869"], ["updated_at", "2018-12-15 08:18:46.961869"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "89"], ["created_at", "2018-12-15 08:18:46.963747"], ["updated_at", "2018-12-15 08:18:46.963747"], ["user_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "90"], ["created_at", "2018-12-15 08:18:46.965298"], ["updated_at", "2018-12-15 08:18:46.965298"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "91"], ["created_at", "2018-12-15 08:18:46.966858"], ["updated_at", "2018-12-15 08:18:46.966858"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "92"], ["created_at", "2018-12-15 08:18:46.968489"], ["updated_at", "2018-12-15 08:18:46.968489"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "93"], ["created_at", "2018-12-15 08:18:46.970180"], ["updated_at", "2018-12-15 08:18:46.970180"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "94"], ["created_at", "2018-12-15 08:18:46.971919"], ["updated_at", "2018-12-15 08:18:46.971919"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "95"], ["created_at", "2018-12-15 08:18:46.973629"], ["updated_at", "2018-12-15 08:18:46.973629"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "96"], ["created_at", "2018-12-15 08:18:46.976641"], ["updated_at", "2018-12-15 08:18:46.976641"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "97"], ["created_at", "2018-12-15 08:18:46.978933"], ["updated_at", "2018-12-15 08:18:46.978933"], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "98"], ["created_at", "2018-12-15 08:18:46.980882"], ["updated_at", "2018-12-15 08:18:46.980882"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "99"], ["created_at", "2018-12-15 08:18:46.982801"], ["updated_at", "2018-12-15 08:18:46.982801"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 17:19:04 +0900
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (123.2ms)
+Completed 200 OK in 438ms (Views: 391.6ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/?page=4" for 127.0.0.1 at 2018-12-15 17:29:45 +0900
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 75]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 75]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (153.4ms)
+Completed 200 OK in 274ms (Views: 253.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/?page=4" for 127.0.0.1 at 2018-12-15 17:30:00 +0900
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 75]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 75]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (102.6ms)
+Completed 200 OK in 168ms (Views: 125.2ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-15 17:30:18 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (51.9ms)
+Completed 200 OK in 86ms (Views: 79.1ms | ActiveRecord: 1.7ms)
+
+
+DEPRECATION WARNING: The -e option is deprecated and will be removed in the near future. Please use the html2slim gem or the html2haml gem to convert erb templates manually. (called from <main> at /Users/m-hori/mytask/bin/rails:9)
+Started GET "/" for 127.0.0.1 at 2018-12-15 17:48:17 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:18
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:29
+  Rendered tasks/index.html.slim within layouts/application (63.7ms)
+Completed 200 OK in 129ms (Views: 110.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-15 17:49:04 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:20
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:30
+  Rendered tasks/index.html.slim within layouts/application (45.4ms)
+Completed 200 OK in 100ms (Views: 93.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-15 17:49:31 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:20
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:30
+  Rendered tasks/index.html.slim within layouts/application (44.9ms)
+Completed 200 OK in 83ms (Views: 76.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-15 17:50:52 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:20
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:30
+  Rendered tasks/index.html.slim within layouts/application (51.4ms)
+Completed 200 OK in 118ms (Views: 85.2ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-12-15 18:32:38 +0900
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/_form.html.slim (13.6ms)
+  Rendered tasks/new.html.slim within layouts/application (22.6ms)
+Completed 200 OK in 151ms (Views: 84.9ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-12-15 18:32:48 +0900
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoDw1kXXLhB44Z8+qnxQ70TskWTCuMoqb3+Y2zRCL5BTf66bF2nHD2uej6GJv1gvZbxK+ougCukjX1zRdRRrzg==", "task"=>{"name"=>"サンプルジョブ", "description"=>"登録確認"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[36mTask Create (1.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "サンプルジョブ"], ["description", "登録確認"], ["created_at", "2018-12-15 09:32:48.252370"], ["updated_at", "2018-12-15 09:32:48.252370"], ["user_id", 2]]
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:42
+  Rendering task_mailer/creation_email.html.slim within layouts/mailer
+  Rendered task_mailer/creation_email.html.slim within layouts/mailer (5.2ms)
+  Rendering task_mailer/creation_email.text.slim within layouts/mailer
+  Rendered task_mailer/creation_email.text.slim within layouts/mailer (3.1ms)
+TaskMailer#creation_email: processed outbound mail in 84.6ms
+Sent mail to user@example.com (10.8ms)
+Date: Sat, 15 Dec 2018 18:32:48 +0900
+From: mytask@example.com
+To: user@example.com
+Message-ID: <5c14ca407e28b_5f033fd5109cbed488641@MasanarinoMacBook-puro.local.mail>
+Subject: =?UTF-8?Q?=E3=82=BF=E3=82=B9=E3=82=AF=E4=BD=9C=E6=88=90=E5=AE=8C=E4=BA=86=E3=83=A1=E3=83=BC=E3=83=AB?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c14ca407c306_5f033fd5109cbed4885e8";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c14ca407c306_5f033fd5109cbed4885e8
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+5Lul5LiL44Gu44K/44K544Kv44KS55m76Yyy44GX44G+44GX44GfDQrlkI3n
+p7DvvJrjgrXjg7Pjg5fjg6vjgrjjg6fjg5YNCuips+OBl+OBhOiqrOaYju+8
+mg0K55m76Yyy56K66KqN
+
+----==_mimepart_5c14ca407c306_5f033fd5109cbed4885e8
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+PGh0bWw+PGhlYWQ+PG1ldGEgY29udGVudD0idGV4
+dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVxdWl2PSJDb250ZW50LVR5
+cGUiIC8+PHN0eWxlPiAvKiBFbWFpbCBzdHlsZXMgbmVlZCB0byBiZSBpbmxp
+bmUgKi8gPC9zdHlsZT48L2hlYWQ+PGJvZHk+5Lul5LiL44Gu44K/44K544Kv
+44KS55m76Yyy44GX44G+44GX44GfPHVsPjxsaT7lkI3np7A644K144Oz44OX
+44Or44K444On44OWPC9saT48bGk+6Kmz44GX44GE6Kqs5piO77yaPHA+55m7
+6Yyy56K66KqNPC9wPjwvbGk+PC91bD48L2JvZHk+PC9odG1sPg==
+
+----==_mimepart_5c14ca407c306_5f033fd5109cbed4885e8--
+
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `preform_later' for SampleJob:Class
+Did you mean?  perform_later):
+  
+app/controllers/tasks_controller.rb:44:in `create'
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 18:33:07 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:20
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:30
+  Rendered tasks/index.html.slim within layouts/application (52.2ms)
+Completed 200 OK in 133ms (Views: 79.5ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-12-15 18:33:09 +0900
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/_form.html.slim (5.1ms)
+  Rendered tasks/new.html.slim within layouts/application (9.7ms)
+Completed 200 OK in 44ms (Views: 40.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-12-15 18:33:21 +0900
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eH/TmkR6t3y7hLkYZR7eHM3bYXu/sxZgiwc5UWFEIKQhgI3XFsReY6j7qYdG3dbc7Iu65far1qPHJ/1bIBJk+g==", "task"=>{"name"=>"サンプルジョブ", "description"=>"確認"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "サンプルジョブ"], ["description", "確認"], ["created_at", "2018-12-15 09:33:21.703463"], ["updated_at", "2018-12-15 09:33:21.703463"], ["user_id", 2]]
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:42
+  Rendering task_mailer/creation_email.html.slim within layouts/mailer
+  Rendered task_mailer/creation_email.html.slim within layouts/mailer (2.9ms)
+  Rendering task_mailer/creation_email.text.slim within layouts/mailer
+  Rendered task_mailer/creation_email.text.slim within layouts/mailer (2.2ms)
+TaskMailer#creation_email: processed outbound mail in 37.6ms
+Sent mail to user@example.com (3.2ms)
+Date: Sat, 15 Dec 2018 18:33:21 +0900
+From: mytask@example.com
+To: user@example.com
+Message-ID: <5c14ca61b9c95_5f033fd50e83417c888df@MasanarinoMacBook-puro.local.mail>
+Subject: =?UTF-8?Q?=E3=82=BF=E3=82=B9=E3=82=AF=E4=BD=9C=E6=88=90=E5=AE=8C=E4=BA=86=E3=83=A1=E3=83=BC=E3=83=AB?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c14ca61b9267_5f033fd50e83417c88788";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c14ca61b9267_5f033fd50e83417c88788
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+5Lul5LiL44Gu44K/44K544Kv44KS55m76Yyy44GX44G+44GX44GfDQrlkI3n
+p7DvvJrjgrXjg7Pjg5fjg6vjgrjjg6fjg5YNCuips+OBl+OBhOiqrOaYju+8
+mg0K56K66KqN
+
+----==_mimepart_5c14ca61b9267_5f033fd50e83417c88788
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+PGh0bWw+PGhlYWQ+PG1ldGEgY29udGVudD0idGV4
+dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVxdWl2PSJDb250ZW50LVR5
+cGUiIC8+PHN0eWxlPiAvKiBFbWFpbCBzdHlsZXMgbmVlZCB0byBiZSBpbmxp
+bmUgKi8gPC9zdHlsZT48L2hlYWQ+PGJvZHk+5Lul5LiL44Gu44K/44K544Kv
+44KS55m76Yyy44GX44G+44GX44GfPHVsPjxsaT7lkI3np7A644K144Oz44OX
+44Or44K444On44OWPC9saT48bGk+6Kmz44GX44GE6Kqs5piO77yaPHA+56K6
+6KqNPC9wPjwvbGk+PC91bD48L2JvZHk+PC9odG1sPg==
+
+----==_mimepart_5c14ca61b9267_5f033fd50e83417c88788--
+
+[ActiveJob] Enqueued SampleJob (Job ID: 7e4e3ffc-09c2-4727-993f-168e4f5bcff2) to Async(default)
+Redirected to http://localhost:3000/tasks/121
+[ActiveJob] [SampleJob] [7e4e3ffc-09c2-4727-993f-168e4f5bcff2] Performing SampleJob (Job ID: 7e4e3ffc-09c2-4727-993f-168e4f5bcff2) from Async(default)
+Completed 302 Found in 70ms (ActiveRecord: 2.2ms)
+
+
+[ActiveJob] [SampleJob] [7e4e3ffc-09c2-4727-993f-168e4f5bcff2] Error performing SampleJob (Job ID: 7e4e3ffc-09c2-4727-993f-168e4f5bcff2) from Async(default) in 3.97ms: NameError (uninitialized constant SampleJob::Sidekiq):
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/active_support.rb:56:in `load_missing_constant'
+/Users/m-hori/mytask/app/jobs/sample_job.rb:6:in `perform'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/i18n-1.1.1/lib/i18n.rb:284:in `with_locale'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started GET "/tasks/121" for 127.0.0.1 at 2018-12-15 18:33:21 +0900
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"121"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 121], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:71
+  Rendering tasks/show.html.slim within layouts/application
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 121], ["record_type", "Task"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tasks/show.html.slim:19
+  Rendered tasks/show.html.slim within layouts/application (18.7ms)
+Completed 200 OK in 55ms (Views: 46.4ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/tasks/121" for 127.0.0.1 at 2018-12-15 18:34:32 +0900
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jtdKCJvzXQBmwvl3HSwsw+9NBDwv9rRJMwMXRTxxKyyx+BxjA2QB5/Moi6XsocdGgjJO/ttU0rq22E8TkiNT5w==", "id"=>"121"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 121], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:71
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:60
+  [1m[36mTask Destroy (4.6ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 121]]
+  ↳ app/controllers/tasks_controller.rb:60
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:60
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 121], ["record_type", "Task"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:60
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 69ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-12-15 18:34:33 +0900
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:20
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:30
+  Rendered tasks/index.html.slim within layouts/application (95.4ms)
+Completed 200 OK in 393ms (Views: 386.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-12-15 18:34:35 +0900
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/_form.html.slim (9.9ms)
+  Rendered tasks/new.html.slim within layouts/application (16.8ms)
+Completed 200 OK in 84ms (Views: 79.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-12-15 18:34:43 +0900
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V6+UUJr5+jwwago4kiP0Xwp7K+k1eE8aDV+xBwr0eVoOUModyEcTIyMVGqex4PyfKyvwd3xgj9lBf3UNS6I9BA==", "task"=>{"name"=>"サンプルジョブ", "description"=>"登録"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "サンプルジョブ"], ["description", "登録"], ["created_at", "2018-12-15 09:34:43.994970"], ["updated_at", "2018-12-15 09:34:43.994970"], ["user_id", 2]]
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:42
+  Rendering task_mailer/creation_email.html.slim within layouts/mailer
+  Rendered task_mailer/creation_email.html.slim within layouts/mailer (26.6ms)
+  Rendering task_mailer/creation_email.text.slim within layouts/mailer
+  Rendered task_mailer/creation_email.text.slim within layouts/mailer (3.1ms)
+TaskMailer#creation_email: processed outbound mail in 101.3ms
+Sent mail to user@example.com (7.2ms)
+Date: Sat, 15 Dec 2018 18:34:44 +0900
+From: mytask@example.com
+To: user@example.com
+Message-ID: <5c14cab4415bc_b1b53fefd975453c8437@MasanarinoMacBook-puro.local.mail>
+Subject: =?UTF-8?Q?=E3=82=BF=E3=82=B9=E3=82=AF=E4=BD=9C=E6=88=90=E5=AE=8C=E4=BA=86=E3=83=A1=E3=83=BC=E3=83=AB?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c14cab43fbfd_b1b53fefd975453c84218";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c14cab43fbfd_b1b53fefd975453c84218
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+5Lul5LiL44Gu44K/44K544Kv44KS55m76Yyy44GX44G+44GX44GfDQrlkI3n
+p7DvvJrjgrXjg7Pjg5fjg6vjgrjjg6fjg5YNCuips+OBl+OBhOiqrOaYju+8
+mg0K55m76Yyy
+
+----==_mimepart_5c14cab43fbfd_b1b53fefd975453c84218
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+PGh0bWw+PGhlYWQ+PG1ldGEgY29udGVudD0idGV4
+dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVxdWl2PSJDb250ZW50LVR5
+cGUiIC8+PHN0eWxlPiAvKiBFbWFpbCBzdHlsZXMgbmVlZCB0byBiZSBpbmxp
+bmUgKi8gPC9zdHlsZT48L2hlYWQ+PGJvZHk+5Lul5LiL44Gu44K/44K544Kv
+44KS55m76Yyy44GX44G+44GX44GfPHVsPjxsaT7lkI3np7A644K144Oz44OX
+44Or44K444On44OWPC9saT48bGk+6Kmz44GX44GE6Kqs5piO77yaPHA+55m7
+6YyyPC9wPjwvbGk+PC91bD48L2JvZHk+PC9odG1sPg==
+
+----==_mimepart_5c14cab43fbfd_b1b53fefd975453c84218--
+
+[ActiveJob] Enqueued SampleJob (Job ID: 25db2c2d-fd17-46b5-a686-08b342a05388) to Sidekiq(default)
+Redirected to http://localhost:3000/tasks/122
+Completed 302 Found in 285ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/tasks/122" for 127.0.0.1 at 2018-12-15 18:34:44 +0900
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"122"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 122], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:71
+  Rendering tasks/show.html.slim within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 122], ["record_type", "Task"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tasks/show.html.slim:19
+  Rendered tasks/show.html.slim within layouts/application (6.6ms)
+Completed 200 OK in 40ms (Views: 34.8ms | ActiveRecord: 0.9ms)
+
+
+[ActiveJob] [SampleJob] [25db2c2d-fd17-46b5-a686-08b342a05388] Performing SampleJob (Job ID: 25db2c2d-fd17-46b5-a686-08b342a05388) from Async(default)
+[ActiveJob] [SampleJob] [25db2c2d-fd17-46b5-a686-08b342a05388] Performed SampleJob (Job ID: 25db2c2d-fd17-46b5-a686-08b342a05388) from Async(default) in 6.78ms
+Started GET "/tasks/" for 127.0.0.1 at 2018-12-15 18:38:29 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/m-hori/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "tasks"."id") FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tasks/index.html.slim:19
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "tasks"."id" AS count_column FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["user_id", 2], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:20
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.slim:30
+  Rendered tasks/index.html.slim within layouts/application (116.7ms)
+Completed 200 OK in 454ms (Views: 381.8ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-12-15 18:38:32 +0900
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/_form.html.slim (8.1ms)
+  Rendered tasks/new.html.slim within layouts/application (13.6ms)
+Completed 200 OK in 67ms (Views: 61.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-12-15 18:38:40 +0900
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ddcXMQ6ZgQSvgaVCmyPyyJLuiTXisOK1FMeh10ZeMLUsKEl8XCdoG7z+td244PoIs75Sq6uoInZY52XdBwh06w==", "task"=>{"name"=>"ジョブは", "description"=>"登録される？"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[36mTask Create (4.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ジョブは"], ["description", "登録される？"], ["created_at", "2018-12-15 09:38:40.793239"], ["updated_at", "2018-12-15 09:38:40.793239"], ["user_id", 2]]
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:42
+  Rendering task_mailer/creation_email.html.slim within layouts/mailer
+  Rendered task_mailer/creation_email.html.slim within layouts/mailer (11.3ms)
+  Rendering task_mailer/creation_email.text.slim within layouts/mailer
+  Rendered task_mailer/creation_email.text.slim within layouts/mailer (2.5ms)
+TaskMailer#creation_email: processed outbound mail in 98.1ms
+Sent mail to user@example.com (7.1ms)
+Date: Sat, 15 Dec 2018 18:38:41 +0900
+From: mytask@example.com
+To: user@example.com
+Message-ID: <5c14cba1138c3_b2093ffdcd17e95853738@MasanarinoMacBook-puro.local.mail>
+Subject: =?UTF-8?Q?=E3=82=BF=E3=82=B9=E3=82=AF=E4=BD=9C=E6=88=90=E5=AE=8C=E4=BA=86=E3=83=A1=E3=83=BC=E3=83=AB?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c14cba111f7f_b2093ffdcd17e958536bd";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c14cba111f7f_b2093ffdcd17e958536bd
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+5Lul5LiL44Gu44K/44K544Kv44KS55m76Yyy44GX44G+44GX44GfDQrlkI3n
+p7DvvJrjgrjjg6fjg5bjga8NCuips+OBl+OBhOiqrOaYju+8mg0K55m76Yyy
+44GV44KM44KL77yf
+
+----==_mimepart_5c14cba111f7f_b2093ffdcd17e958536bd
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+PGh0bWw+PGhlYWQ+PG1ldGEgY29udGVudD0idGV4
+dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVxdWl2PSJDb250ZW50LVR5
+cGUiIC8+PHN0eWxlPiAvKiBFbWFpbCBzdHlsZXMgbmVlZCB0byBiZSBpbmxp
+bmUgKi8gPC9zdHlsZT48L2hlYWQ+PGJvZHk+5Lul5LiL44Gu44K/44K544Kv
+44KS55m76Yyy44GX44G+44GX44GfPHVsPjxsaT7lkI3np7A644K444On44OW
+44GvPC9saT48bGk+6Kmz44GX44GE6Kqs5piO77yaPHA+55m76Yyy44GV44KM
+44KL77yfPC9wPjwvbGk+PC91bD48L2JvZHk+PC9odG1sPg==
+
+----==_mimepart_5c14cba111f7f_b2093ffdcd17e958536bd--
+
+[ActiveJob] Enqueued SampleJob (Job ID: 4f855ae8-b0a5-4028-bbfa-2e232d4ba3ea) to Sidekiq(default)
+Redirected to http://localhost:3000/tasks/123
+Completed 302 Found in 299ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/tasks/123" for 127.0.0.1 at 2018-12-15 18:38:41 +0900
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"123"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 123], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:71
+  Rendering tasks/show.html.slim within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 123], ["record_type", "Task"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tasks/show.html.slim:19
+  Rendered tasks/show.html.slim within layouts/application (15.6ms)
+[ActiveJob] [SampleJob] [4f855ae8-b0a5-4028-bbfa-2e232d4ba3ea] Performing SampleJob (Job ID: 4f855ae8-b0a5-4028-bbfa-2e232d4ba3ea) from Sidekiq(default)
+Completed 200 OK in 48ms (Views: 39.3ms | ActiveRecord: 4.0ms)
+
+
+[ActiveJob] [SampleJob] [4f855ae8-b0a5-4028-bbfa-2e232d4ba3ea] Performed SampleJob (Job ID: 4f855ae8-b0a5-4028-bbfa-2e232d4ba3ea) from Sidekiq(default) in 18.43ms

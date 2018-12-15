@@ -12,6 +12,30 @@ class Task < ApplicationRecord
 
   scope :recent, -> {order(created_at: :desc)}
 
+  # csvダウンロード用のメソッド
+  def self.csv_attributes
+    ["name", "description", "created_at", "updated_at"]
+  end
+
+  def self.generate_csv
+    # csvデータの文字列を生成 上記のクラスメソッドの戻り値は生成した文字列となる
+    CSV.generate(headers: true) do |csv|
+      csv << csv_attributes
+      all.each do |task|
+        csv << csv_attributes.map{ |attr| task.send(attr) }
+      end
+    end
+  end
+
+  # csvインポート用のメソッド
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      task = Task.new
+      task.attributes = row.to_hash.slice("name", "description", "created_at", "updated_at")
+      task.save!
+    end
+  end
+
   private
 
   # ここはp218で不要となったのでいったん削除

@@ -2,7 +2,21 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   def index
     @q = current_user.tasks.ransack(params[:q])
-    @tasks = @q.result(distinct: true)
+    @tasks = @q.result(distinct: true).page(params[:page]).per(30)
+
+    # csvクラスメソッドを呼び出して使う
+    respond_to do |format|
+      # htmlについては何もしない
+      format.html
+      # csvの場合はsend_dataメソッドを「使ってレスポンスを送り出し、送り出したデータをブラウザからダウンロードできるようにする
+      # format.csv { send_data @tasks.generate_csv, filename: "tasks-#{Time.zone.now.shrftime('%Y%m%d%S').csv}" }
+      format.csv { send_data @tasks.generate_csv, filename: "tasks-#{Time.zone.now.strftime('%Y%m%d%S')}.csv" }
+    end
+  end
+
+  def import
+    current_user.tasks.import(params[:file])
+    redirect_to tasks_url, notice: "タスクを追加しました"
   end
 
   def show
@@ -27,6 +41,7 @@ class TasksController < ApplicationController
 
     if @task.save
       TaskMailer.creation_email(@task).deliver_now
+      SampleJob.perform_later
       redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"
     else
       render :new
