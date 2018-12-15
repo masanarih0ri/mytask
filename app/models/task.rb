@@ -1,4 +1,6 @@
 class Task < ApplicationRecord
+  # 1つのタスクに1つの画像を紐づけること、その画像をTaskモデルからimageを呼ぶことを指定している
+  has_one_attached :image
   # nameが検証される前に名前が無い場合には「名前なし」というタスク名にする
   # ここはp218で不要となったのでいったん削除
   # before_validation :set_nameless_name
